@@ -1,4 +1,5 @@
 import feedparser
+from bs4 import BeautifulSoup
 from .base_crawler import BaseCrawler
 
 RSS_URL = "https://mexicobusiness.news/feed"
@@ -23,8 +24,6 @@ class MexicoBusinessCrawler(BaseCrawler):
             url = entry.get("link", "")
             date = entry.get("published", "")
 
-            # feedparser가 파싱한 summary에는 HTML 태그가 섞일 수 있으므로 정제
-            from bs4 import BeautifulSoup
             clean_summary = BeautifulSoup(summary, "html.parser").get_text(strip=True)
 
             items.append({

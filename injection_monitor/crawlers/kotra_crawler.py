@@ -1,4 +1,5 @@
 import time
+from typing import Optional
 from bs4 import BeautifulSoup
 from .base_crawler import BaseCrawler
 
@@ -55,7 +56,7 @@ class KotraCrawler(BaseCrawler):
 
         return items
 
-    def _get_rendered_html(self) -> str | None:
+    def _get_rendered_html(self) -> Optional[str]:
         """Selenium으로 JS 렌더링 후 페이지 소스 반환. 미설치 시 requests로 폴백."""
         try:
             from selenium import webdriver

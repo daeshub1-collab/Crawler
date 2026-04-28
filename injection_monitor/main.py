@@ -13,6 +13,13 @@
 import argparse
 import sys
 from datetime import datetime
+from pathlib import Path
+
+# injection_monitor/ 디렉터리를 sys.path 맨 앞에 추가
+# → 상위 디렉터리에서 실행해도 crawlers, filter, mailer, sent_log를 찾을 수 있게 함
+_HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
 
 
 def _banner():
