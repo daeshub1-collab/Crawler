@@ -2,8 +2,8 @@ name: 사출기 모니터링 자동 실행
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 매주 월요일 09:00 KST (UTC 00:00)
-  workflow_dispatch:       # 수동 실행 버튼도 활성화
+    - cron: '0 23 * * 0'  # 매주 월요일 08:00 KST (일요일 UTC 23:00)
+  workflow_dispatch:
 
 jobs:
   run-monitor:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: 코드 가져오기
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Python 설치
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -31,7 +31,7 @@ jobs:
           FETCH_RETRY: 2
           SELENIUM_WAIT: 20
           SCHEDULE_DAY: monday
-          SCHEDULE_TIME: "09:00"
+          SCHEDULE_TIME: "08:00"
         run: |
           cd injection_monitor
           python main.py --once
