@@ -1,6 +1,8 @@
 requests
 beautifulsoup4
+feedparser
 python-dotenv
 schedule
 pywin32
-feedparser
+selenium
+webdriver-manager
