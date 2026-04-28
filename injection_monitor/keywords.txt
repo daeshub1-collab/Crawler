@@ -1,0 +1,40 @@
+[REQUIRED]
+injection molding machine
+injection moulding
+IMM
+injection press
+molding press
+
+[TARIFF]
+tariff
+Section 301
+USMCA
+HS code 8477
+customs duty
+import duty
+trade policy
+trade war
+anti-dumping
+
+[MARKET]
+electric injection
+all-electric molding
+Engel
+Haitian
+KraussMaffei
+Arburg
+Sumitomo
+Fanuc
+Husky
+Milacron
+plastic machinery
+plastics industry
+North America plastics
+
+[EXCLUDE]
+hiring
+job opening
+recruitment
+wanted
+career
+internship
