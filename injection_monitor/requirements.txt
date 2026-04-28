@@ -2,6 +2,5 @@ requests
 feedparser
 selenium
 python-dotenv
-pywin32
 schedule
 beautifulsoup4
