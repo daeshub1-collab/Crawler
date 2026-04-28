@@ -19,12 +19,21 @@ def build_html_body(items: list) -> str:
 
     rows = ""
     for item in items:
+        date = item.get("date", "")
+        source = item.get("source", "")
+        title = item.get("title", "")
+        url = item.get("url", "")
+
         rows += f"""
         <tr>
-            <td style="padding:8px; border:1px solid #ddd;">{item.get('date', '')}</td>
-            <td style="padding:8px; border:1px solid #ddd;">{item.get('source', '')}</td>
+            <td style="padding:8px; border:1px solid #ddd;">{date}</td>
+            <td style="padding:8px; border:1px solid #ddd;">{source}</td>
             <td style="padding:8px; border:1px solid #ddd;">
-                <a href="{item.get('url', '')}">{item.get('title', '')}</a>
+                <a href="{url}">{title}</a>
+            </td>
+            <td style="padding:8px; border:1px solid #ddd; font-size:12px; word-break:break-all;">
+                <a href="{url}">원문 보기</a><br>
+                {url}
             </td>
         </tr>"""
 
@@ -33,14 +42,17 @@ def build_html_body(items: list) -> str:
 <body style="font-family: Arial, sans-serif; font-size: 14px;">
     <h2>🏭 사출기 북미 시장 & 관세 모니터링</h2>
     <p>📅 기준일: {now} &nbsp;|&nbsp; 총 <b>{len(items)}건</b> 수집</p>
+
     <table style="border-collapse:collapse; width:100%;">
         <tr style="background:#f2f2f2;">
             <th style="padding:8px; border:1px solid #ddd; width:120px;">날짜</th>
             <th style="padding:8px; border:1px solid #ddd; width:150px;">출처</th>
             <th style="padding:8px; border:1px solid #ddd;">제목</th>
+            <th style="padding:8px; border:1px solid #ddd; width:300px;">URL</th>
         </tr>
         {rows}
     </table>
+
     <br>
     <p style="color:gray; font-size:12px;">※ 이 메일은 자동 발송됩니다.</p>
 </body>
