@@ -8,28 +8,30 @@ SOURCE = "Plastics News"
 
 class PlasticsNewsCrawler(BaseCrawler):
     def parse(self):
-        feed = feedparser.parse(RSS_URL)
+        # fetch_page()로 요청 → verify=False 적용, feedparser에 본문 직접 전달
+        resp = self.fetch_page(RSS_URL)
+        if not resp:
+            return []
+
+        feed = feedparser.parse(resp.content)
         items = []
 
         for entry in feed.entries:
             title = entry.get("title", "")
-            url = entry.get("link", "")
+            url   = entry.get("link", "")
             if not title or not url:
                 continue
 
-            date = entry.get("published", "")
-            raw_summary = entry.get("summary", "") or entry.get("description", "")
-            summary = BeautifulSoup(raw_summary, "html.parser").get_text(strip=True)
+            date      = entry.get("published", "")
+            raw_sum   = entry.get("summary", "") or entry.get("description", "")
+            summary   = BeautifulSoup(raw_sum, "html.parser").get_text(strip=True)
 
             items.append({
-                "title": title,
-                "url": url,
-                "date": date,
+                "title":   title,
+                "url":     url,
+                "date":    date,
                 "summary": summary[:300],
-                "source": SOURCE,
+                "source":  SOURCE,
             })
 
         return items
-
-    def fetch_page(self, url, timeout=15, **kwargs):
-        pass  # feedparser가 직접 HTTP 요청을 처리함
