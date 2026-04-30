@@ -1,37 +1,38 @@
-name: 사출기 모니터링 자동 실행
+name: Build crawler JSON for Dify
 
 on:
   schedule:
-    - cron: '0 23 * * 0'  # 매주 월요일 08:00 KST (일요일 UTC 23:00)
+    - cron: '45 22 * * 0'  # 매주 월요일 07:45 KST
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  run-monitor:
+  build-json:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 코드 가져오기
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Python 설치
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 패키지 설치
+      - name: Install dependencies
         run: pip install -r injection_monitor/requirements.txt
 
-      - name: 크롤러 실행
-        env:
-          MAIL_TO: ${{ secrets.MAIL_TO }}
-          MAIL_SUBJECT: ${{ secrets.MAIL_SUBJECT }}
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          FETCH_TIMEOUT: 15
-          FETCH_RETRY: 2
-          SELENIUM_WAIT: 20
-          SCHEDULE_DAY: monday
-          SCHEDULE_TIME: "08:00"
+      - name: Run crawler and export JSON
         run: |
           cd injection_monitor
-          python main.py --once
+          python main.py --export-json ../data/latest_articles.json --skip-mail
+
+      - name: Commit latest JSON
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/latest_articles.json
+          git commit -m "Update latest crawler articles" || echo "No changes to commit"
+          git push
