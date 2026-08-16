@@ -1,8 +1,8 @@
 {
-  "report_date": "2026-08-09",
-  "generated_at": "2026-08-09 23:03:52",
+  "report_date": "2026-08-16",
+  "generated_at": "2026-08-16 22:55:34",
   "project": "Injection Molding Machine North America Market & Tariff Monitor",
-  "article_count": 6,
+  "article_count": 9,
   "articles": [
     {
       "source": "Federal Register",
@@ -34,6 +34,15 @@
     {
       "source": "Canadian Plastics",
       "date": "",
+      "title": "NewsPlastics ProcessesAugust 12, 2026PCS Co. now supplying APSX-PIM tabletop injection molding press",
+      "url": "https://www.canplastics.com/plastics-processes/pcs-co-now-supplying-apsx-pim-tabletop-injection-molding-press/1003469802/",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
       "title": "NewsPlastics ProcessesJuly 30, 2026Arburg buys Stork IMM",
       "url": "https://www.canplastics.com/plastics-processes/arburg-buys-stork-imm/1003469727/",
       "summary": "",
@@ -52,8 +61,26 @@
     {
       "source": "Canadian Plastics",
       "date": "",
+      "title": "LS Mtron Injection Molding MachineryWood Dale, IL",
+      "url": "https://www.canplastics.com/supplier/ls-mtron-injection-molding-machinery/",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
       "title": "Injection molding machinery pioneer Glenn H. Frohring passes away",
       "url": "https://www.canplastics.com/plastics-processes/injection-molding-machinery-pioneer-glenn-h-frohring-passes-away/1003469693/",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
+      "title": "PCS Co. now supplying APSX-PIM tabletop injection molding press",
+      "url": "https://www.canplastics.com/plastics-processes/pcs-co-now-supplying-apsx-pim-tabletop-injection-molding-press/1003469802/",
       "summary": "",
       "region_hint": "",
       "category_hint": ""
