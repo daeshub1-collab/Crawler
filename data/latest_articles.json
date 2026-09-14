@@ -1,8 +1,8 @@
 {
-  "report_date": "2026-09-07",
-  "generated_at": "2026-09-07 00:20:07",
+  "report_date": "2026-09-14",
+  "generated_at": "2026-09-14 00:24:53",
   "project": "Injection Molding Machine North America Market & Tariff Monitor",
-  "article_count": 3,
+  "article_count": 6,
   "articles": [
     {
       "source": "Federal Register",
@@ -27,6 +27,33 @@
       "date": "2024-12-18",
       "title": "Certain Components for Injection Molding Machines, and Products Containing the Same; Notice of Institution of Investigation",
       "url": "https://www.federalregister.gov/documents/2024/12/18/2024-29906/certain-components-for-injection-molding-machines-and-products-containing-the-same-notice-of",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
+      "title": "NewsPlastics ProcessesAugust 12, 2026PCS Co. now supplying APSX-PIM tabletop injection molding press",
+      "url": "https://www.canplastics.com/plastics-processes/pcs-co-now-supplying-apsx-pim-tabletop-injection-molding-press/1003469802/",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
+      "title": "NewsPlastics ProcessesJuly 30, 2026Arburg buys Stork IMM",
+      "url": "https://www.canplastics.com/plastics-processes/arburg-buys-stork-imm/1003469727/",
+      "summary": "",
+      "region_hint": "",
+      "category_hint": ""
+    },
+    {
+      "source": "Canadian Plastics",
+      "date": "",
+      "title": "LS Mtron Injection Molding MachineryWood Dale, IL",
+      "url": "https://www.canplastics.com/supplier/ls-mtron-injection-molding-machinery/",
       "summary": "",
       "region_hint": "",
       "category_hint": ""
